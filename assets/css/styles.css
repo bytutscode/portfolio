@@ -1,0 +1,612 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+* {
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: 'Oswald', sans-serif;
+    
+}
+
+body {
+    background-color: #E1E5F2;
+
+}
+
+
+
+/* header */
+
+header {
+    background-color: white;
+    border-bottom: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px;
+    align-items: center;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 500;
+}
+
+header ul {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+}
+
+header ul li {
+    margin: 10px;
+    font-size: 18px;
+}
+
+header .header-icons {
+    display: flex;
+}
+header .header-icons a {
+    margin: 10px;
+}
+
+.menu-btn {
+    display: none;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+}
+
+@media (max-width:600px){
+    header {
+        flex-direction: column;
+        background-color: rgb(204, 204, 204);
+        height: 100%;
+        width: 100%;
+        transition: all ease-in-out .3s;
+        overflow: hidden;
+        padding: 0;
+        margin-left: -150vw;
+        justify-content: flex-start;
+        padding: 0;
+    }
+    header.show {
+        margin-left: 0;
+    }
+    header ul {
+        margin-top: 100px;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }  
+
+    header ul li {
+        font-size: 30px;
+    }
+    .menu-btn {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        cursor: pointer;
+    }
+}
+
+.menu-btn span {
+    width: 100%;
+    position: absolute;
+    background-color: white;
+    height: 3px;
+    display: block;
+    top: 10px;
+    transition: all ease-in .3s;
+}
+
+.menu-btn span:nth-child(2){
+    top: 20px;
+}
+
+.menu-btn span:last-child {
+    top: 30px;
+}
+
+.firstline,.secondline,.thirdline {
+    top: 20px !important;
+}
+.firstline {
+    transform: rotate(45deg);
+}
+.secondline {
+    opacity: 0;
+}
+.thirdline {
+    transform: rotate(-45deg);
+}
+
+
+.banner {
+    background-image: url('../../media/maik-jonietz-_yMciiStJyY-unsplash.jpg');
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* about */
+
+#about {
+    padding: 0px;
+}
+
+#about img {
+    background-color: #BDD4E7;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    max-width: 250px;
+    max-height: 250px;
+    min-width: 250px;
+    min-height: 250px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: 50% 25%;
+    box-shadow: 0px 0px 10px black;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    padding: 10px;
+}
+
+.about {
+    padding: 50px;
+}
+
+#about h2 {
+    font-size: 30px;
+}
+
+#about p {
+    font-size: 19px;
+    margin-top: 20px;
+}
+
+
+/* projects */
+
+#projects {
+    padding: 50px;
+    position: relative;
+}
+
+#projects .previus {
+    font-size: 30px;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 120;
+    top: 50%;
+    font-family: Arial, Helvetica, sans-serif;
+    transform: translate(-20%,-50%);
+}
+
+#projects .previus:hover {
+    opacity: 0.8;
+}
+
+#projects .next {
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    z-index: 120;
+    font-size: 30px;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    top: 50%;
+    transform: translate(-20%,-50%);
+    right: 20px;
+}
+#projects .next:hover {
+    opacity: 0.8;
+}
+
+#projects .projects {
+    display: flex;
+    overflow: hidden;
+    transition: all ease-in .3s;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#projects h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+#projects .project {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#projects .project {
+    margin: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+
+#projects .project img {
+    z-index: 10;
+    width: 100%;
+    height: 200px;
+    object-position: top;
+    object-fit: cover;
+    position: relative;
+}
+
+
+
+
+#projects .project h3 {
+    height: 30px;
+    padding: 0;
+    margin-top: 10px;
+}
+
+#projects .opened{
+    transition: all ease-in-out .4s;
+    display: none;
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0px;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 500;
+    background-color: #E1E5F2;
+    overflow: hidden;
+    overflow: auto;
+    padding-bottom: 10px;
+}
+#projects .opened .project-imgs{
+    display: flex;
+    position: relative;
+}
+
+#projects .opened .project-imgs img {
+    max-height: 50%;
+    height: 400px;
+    min-width: 100%;
+    width: 100%;
+    object-fit: contain;
+    position: relative;
+    
+}
+
+@keyframes websiteviewer {
+    0%{
+        object-position: top 0px left 0px;
+    }
+    50%{
+        object-position: bottom 0px left 0px;
+    }
+    100%{
+        object-position: top 0px left 0px;
+    }
+}
+#projects .opened .project-imgs img.website {
+    object-fit: cover;
+    object-position: top;
+    min-width: 800px;
+    width: 800px;
+    margin: auto;
+    animation-name: websiteviewer;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+#projects .opened .project-imgs .others {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    text-align: end;
+    
+}
+#projects .opened .project-imgs .others img {
+    object-position: top;
+    max-width: 200px;
+    min-width: 0px;
+    width: 200px;
+    display: block;
+    height: 16vh;
+    object-fit: cover;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+}
+#projects .opened .project-imgs .others img.active {
+    border: 2px solid white;
+}
+
+.bodyScroll {
+    overflow: hidden;
+}
+
+#projects .opened img {
+    width: 100%;
+    object-fit: cover;
+
+}
+
+#projects .opened h4 {
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#projects .opened p {
+    width:100% ;
+    max-width: 800px;
+    margin: auto;
+    padding: 0px 10px;
+    margin-bottom: 10px;
+}
+
+#projects .opened a  {
+    text-align: center;
+}
+
+
+
+#projects .opened a img {
+    max-width:48px;
+    max-height: 48px;
+    object-fit: contain;
+    overflow: visible;
+}
+
+#projects .opened button {
+    display: block;
+    margin: auto;
+    margin-top: 5px;
+    padding: 20px;
+    background-color: #20A39E;
+    border: 0;
+    cursor: pointer;
+}
+
+#projects .opened button:hover {
+    background-color: #1c918d;
+}
+
+
+/* skills */
+
+
+#skills {
+    padding: 100px 20px;
+}
+
+#skills h2 {
+    font-size: 40px;
+    text-align: center;
+}
+
+#skills h2::after {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 8px;
+    background-color: black;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+#skills .skills {
+    justify-content: center;
+    margin-top: 25px;
+}
+
+#skills .skills .skill {
+    margin-right: 20px;
+    padding: 20px 15px;
+    border-radius: 10px;
+    
+}
+
+#skills .skills .skill .skills-imgs {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+#skills .skills .skill h5 {
+    font-size: 24px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+#skills .skills .skill h6 {
+    font-size: 19px;
+    margin-top: 7px;
+}
+
+#skills .skills .skill img {
+    margin: auto;
+    width: 50px;
+    margin-top: 15px;
+
+}
+
+/* contact */
+
+
+
+footer .contact h4{
+    font-size: 30px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+footer .contact p  {
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+footer .contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .contact form input {
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+    padding: 20px;
+    outline: none;
+    border: 0;
+    color: black;
+    font-size: 19px;
+    background-color:aliceblue;
+    border-radius: 5px;
+}
+
+footer .contact form input:nth-child(4) {
+    height: 100px;
+    padding: 10px;
+}
+
+footer .contact input:last-child {
+    max-width: 200px;
+    width: 50%;
+    cursor: pointer;
+}
+footer .contact input:last-child:hover {
+    opacity: 0.8;
+}
+
+.copy {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:1000px){
+    #projects {
+        padding: 20px;
+        overflow: hidden;
+    }
+    #projects .previus {
+        left:10px;
+        width: 60px;
+        height: 60px;
+    }
+    #projects .next {
+        width: 60px;
+        height: 60px;
+        right:-10px;
+    }
+    #projects .opened .project-imgs{
+        flex-direction: column;
+    }
+    #projects .opened .project-imgs .others {
+        position: static;
+        display: flex;
+        padding: 0px 20px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #projects .opened .project-imgs .others * {
+        
+    }
+    #projects .opened .project-imgs img.website{
+        min-width: 100%;
+        object-fit: cover;
+        width: 100%;
+    }
+    #projects .opened .project-imgs img {
+        max-height: 720px;
+        object-fit: cover;
+    }
+
+    #skills .skills {
+        flex-direction: column;
+    }
+    #skills .skills *{
+        margin-top: 15px;
+    }
+
+    #skills .skills .skill {
+        margin-right: 0px;
+    }
+
+
+    footer {
+        padding: 0px 15px;
+    }
+}
+
+@media (max-width:550px){
+    #about h1 {
+        font-size: 30px;
+    }
+    #about h2 {
+        font-size: 25px;
+    }
+}
+
+.hidden {
+    opacity: 0;
+}
+@keyframes dots {
+    50%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+h1::after {
+    content: '_';
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    animation-name: dots;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.obs-show {
+    opacity: 1;
+    transition: all ease 1s;
+}
