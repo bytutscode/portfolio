@@ -37,6 +37,8 @@ header {
     position: absolute;
     width: 100%;
     z-index: 500;
+    background-color: black;
+    box-shadow: 0px 1px 3px #39fe1f;
 }
 
 header ul {
@@ -48,12 +50,16 @@ header ul {
 header ul li {
 
     margin: 10px;
+
     font-size: 18px;
 }
 
 header ul li a {
     color: #39fe1f;
     text-shadow: 0px 0px 2px black;
+    text-transform: uppercase;
+    padding: 10px;
+
 }
 
 header .header-icons {
@@ -156,7 +162,7 @@ header .header-icons a img {
 
 
 .banner {
-    background-image: url('https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-image: url('https://funart.pro/uploads/posts/2022-08/thumbs/1660055632_24-funart-pro-p-piksel-art-kompyuter-krasivo-30.png');
     background-position: center;
     background-size: cover;
     height: 80vh;
@@ -189,7 +195,7 @@ header .header-icons a img {
 
 h1 {
     color: #39fe1f;
-    text-shadow: 0px 0px 2px black;
+    text-shadow: 0px 0px 5px black;
     text-align: center;
     font-weight: bolder;
     font-size: 40px;
@@ -198,14 +204,18 @@ h1 {
 
 .about {
     padding: 50px;
+    max-width: 800px;
+    text-align: center;
 }
 
 #about h2 {
-    font-size: 30px;
+    font-size: 40px;
+    text-align: center;
 }
 
 #about p {
-    font-size: 19px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
     margin-top: 20px;
 }
 
@@ -284,7 +294,10 @@ h1 {
     border: 1px solid #39fe1f;
     border-radius: 7px;
     overflow: hidden;
+    transition: all ease-in-out .5s;
+
 }
+
 
 
 #projects .project img {
@@ -402,8 +415,8 @@ h1 {
 
 #projects .opened h4 {
     font-size: 30px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
 }
 
 #projects .opened p {
@@ -412,6 +425,7 @@ h1 {
     margin: auto;
     padding: 0px 10px;
     margin-bottom: 10px;
+    color: #39fe1f;
 }
 
 #projects .opened a {
@@ -455,15 +469,16 @@ h1 {
 #skills h2 {
     font-size: 40px;
     text-align: center;
+    text-transform: uppercase;
 }
 
 #skills h2::after {
     content: '';
     display: block;
-    width: 50px;
-    height: 20px;
+    width: 30px;
+    height: 15px;
     background-color: #39fe1f;
-    border-radius: 5px;
+
     margin: auto;
     margin-top: 10px;
 }
@@ -498,9 +513,16 @@ h1 {
     align-items: center;
     border: 1px solid #39fe1f;
     padding: 30px;
-    box-shadow: 0px 2px 3px rgb(0, 255, 0);
-    border-radius: 20%;
-    min-width: 130px;
+    flex: 1;
+    text-align: center;
+    border-radius: 2px;
+    transition: ease-in-out .5s;
+}
+
+#skills .skills .skill .skills-imgs div:hover {
+    transform: translate(0px, -20px);
+
+
 }
 
 #skills .skills .skill .skills-imgs div img {
@@ -538,7 +560,9 @@ h1 {
 }
 
 /* contact */
-
+#contact {
+    text-align: center;
+}
 
 
 footer .contact h4 {
@@ -593,10 +617,22 @@ footer .contact input:last-child:hover {
     opacity: 0.8;
 }
 
+#contact a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 5px;
+}
+
+#contact a img {
+    width: 30px;
+}
+
 .copy {
+    border-top: 1PX solid #39fe1f;
     margin-top: 50px;
     padding: 20px;
     text-align: center;
+    color: #CCC;
 }
 
 
@@ -649,7 +685,7 @@ footer .contact input:last-child:hover {
         align-items: center;
     }
 
-    #projects .opened .project-imgs .others * {}
+
 
     #projects .opened .project-imgs img.website {
         min-width: 100%;
